@@ -3,11 +3,11 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8Y2JT1VN"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EQ8Y2JT1VN');
 </script>
 
@@ -16,29 +16,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="/img/basic/LOGO-01.png">
 
-    <title>jakublaczniak.com - Jakub Łączniak portfolio, graphic designer</title>
+    <title>Jakub Łączniak</title>
 </head>
 <body>
 
-    <header class="wide-screen">
+    <header>
         <div class="logo">
             <img src="./img/basic/logo_150x150 niebieski.png" alt="" width="150px" height="150px" class="img">
         </div>
         <nav>
             <ul class="wide-screen-list">
-                <li class="graph graph-selector"><a href="#">graphic design</a></li>
-                <li class="active painting-selector"><a href="#">Painting/drawing</a></li>
-                <li class="active frontend-selector"><a href="#">front end development</a></li>
-                <li class="active about-selector"><a href="#">about me &amp; contact</a></li>
+                <li class="nav-links graph active" data-id="graphic">graphic design</li>
+                <li class="nav-links paint" data-id="painting">Painting/drawing</li>
+                <li class="nav-links frontend" data-id="frontend">front end development</li>
+                <li class="nav-links about" data-id="about">about me &amp; contact</li>
             </ul>
         </nav>
     </header>
 
-
-
-    <!-- 
-        Wszystko tutaj odnosi się do responsywności
+    <!-- Wszystko tutaj odnosi się do responsywności
         
         <div class="nav-shadow">
             <div class="narrow-screen-nav">
@@ -61,7 +59,7 @@
 
 <!-- ================ GRAPHIC DESIGN ===================== -->
 
-    <main class="graphic-design">
+    <main class="main-container" id="graphic">
         <article class="project-container">
             
             <!-- Specialty Coffee -->
@@ -69,7 +67,7 @@
                 <div class="curtain GR">
                 <h4 class="project-text">Specialty <br> Coffee <br> Project</h4>
                 </div>
-                <img src="/My-Portfolio/img/graphic/specialty.jpg" alt="" class="img-element">
+                <img src="img/graphic/specialty.jpg" alt="" class="img-element">
             </section>
 
             <!-- Promotional materials -->            
@@ -77,7 +75,7 @@
                 <div class="curtain GR">
                 <h4 class="project-text">Promotional<br>materials</h4>
                 </div>
-                <img src="/My-Portfolio/img/graphic/turystyka.jpg" alt="" class="img-element">
+                <img src="img/graphic/turystyka.jpg" alt="" class="img-element">
             </section>
 
             <!-- Premium Tea project -->
@@ -85,7 +83,7 @@
                 <div class="curtain GR">
                 <h4 class="project-text">Premium Tea <br>Project</h4>
                 </div>
-                <img src="/My-Portfolio/img/graphic/tea.jpg" alt="" class="img-element">
+                <img src="img/graphic/tea.jpg" alt="" class="img-element">
             </section>
 
             <!-- Logo Design -->            
@@ -93,7 +91,7 @@
                 <div class="curtain GR">
                 <h4 class="project-text">Logo<br>Design</h4>
                 </div>
-                <img src="/My-Portfolio/img/graphic/logo.jpg" alt="" class="img-element">
+                <img src="img/graphic/logo.jpg" alt="" class="img-element">
             </section>
 
             <!-- Utility Graphics -->
@@ -101,7 +99,7 @@
                 <div class="curtain GR">
                 <h4 class="project-text">Utility Graphics<br>and Layouts</h4>
                 </div>
-                <img src="/My-Portfolio/img/graphic/uzytkowa.jpg" alt="" class="img-element">
+                <img src="img/graphic/uzytkowa.jpg" alt="" class="img-element">
             </section>
 
             <!-- Sport's Object -->
@@ -109,7 +107,7 @@
                 <div class="curtain GR">
                 <h4 class="project-text">Sport's Object<br>Brand</h4>
                 </div>
-                <img src="/My-Portfolio//img/graphic/obiekt.jpg" alt="" class="img-element">
+                <img src="/img/graphic/obiekt.jpg" alt="" class="img-element">
             </section>
 
         </article>
@@ -117,7 +115,7 @@
 
 <!-- ================ DRAWING & PAINTING ===================== -->
 
-    <main class="drawing-painting visible">
+    <main class="main-container invisible" id="painting">
         <article class="project-container">
 
             <!-- Master Studies -->
@@ -125,7 +123,7 @@
                 <div class="curtain PT">
                 <h4 class="project-text">Master<br>Studies</h4>
                 </div>
-                <img src="/My-Portfolio/img/painting/master-bg.jpg" alt="" class="img-element">
+                <img src="img/painting/master-bg.jpg" alt="" class="img-element">
             </section>
 
             <!-- Digital Painting -->
@@ -133,7 +131,7 @@
                 <div class="curtain PT">
                 <h4 class="project-text">Digital<br>Painting</h4>
                 </div>
-                <img src="/My-Portfolio/img/painting/dpainting-bg.jpg" alt="" class="img-element">
+                <img src="img/painting/dpainting-bg.jpg" alt="" class="img-element">
             </section>
 
             <!-- Sketches on paper -->
@@ -141,7 +139,7 @@
                 <div class="curtain PT">
                 <h4 class="project-text">Sketches<br>on paper</h4>
                 </div>
-                <img src="/My-Portfolio/img/painting/drsketching-bg.jpg" alt="" class="img-element">
+                <img src="img/painting/drsketching-bg.jpg" alt="" class="img-element">
             </section>
 
             <!-- Digital Sketches -->
@@ -149,7 +147,7 @@
                 <div class="curtain PT">
                 <h4 class="project-text">Digital<br>Sketches</h4>
                 </div>
-                <img src="/My-Portfolio/img/painting/disketch-bg.jpg" alt="" class="img-element">
+                <img src="img/painting/disketch-bg.jpg" alt="" class="img-element">
             </section>
 
         </article>
@@ -157,7 +155,7 @@
 
 <!-- ================ FRONT END DEVELOPER ===================== -->    
 
-    <main class="frontend-development visible">
+    <main class="main-container invisible" id="frontend">
         <article class="project-container">
 
             <!-- Personal Website Coding -->
@@ -165,7 +163,7 @@
                 <div class="curtain FE">
                 <h4 class="project-text">Personal Website<br>Coding</h4>
                 </div>
-                <img src="/My-Portfolio/img/frontend/9.jpg" alt="" class="img-element">
+                <img src="img/frontend/9.jpg" alt="" class="img-element">
             </section>
             
         </article>
@@ -173,18 +171,20 @@
 
 <!-- ================ ABOUT ME ===================== -->
 
-    <main class="aboutme visible">
+<main class="main-container invisible" id="about">
+    <article class="project-container">
         <p class="text-aboutme">My name is Jakub Łączniak and I am a graphic designer with an ambition to be a front-end developer. I have been working as a freelancer for several years, and for over two years I have been a communication design specialist in my hometown of Trzebnica. In my daily work, I encounter a huge amount of very diverse tasks. Commercial graphics, preparing materials for printing, for the Internet, animation, film processing, photo retouching, illustration, branding of buildings, billboards, leaflets design, product photography, reporting, and from time to time even the work of a lecturer or film statistician. In general, little can surprise me, and I like this variety and I am not afraid of challenges. <br><br>
            
-            If for some reasone you want to work with me:
-           <span>kuba.laczniak1[at]gmail.com</span> 
-            </p>
-        <div class="myphoto"></div>
-    </main>
+        If for some reasone you want to work with me:
+        <span>kuba.laczniak1[at]gmail.com</span> 
+        </p>
+        <img src="img/basic/profilowe.jpg" alt="" class="img-element">
+    </article>
+</main>
 
-<div class="foot"></div>
+<div class="foot graphic"></div>
 
-<script src="/My-Portfolio/script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

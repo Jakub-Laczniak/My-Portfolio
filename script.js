@@ -1,192 +1,103 @@
-var graph = document.querySelector('.graph-selector')
-var paint = document.querySelector('.painting-selector')
-var frontend = document.querySelector('.frontend-selector')
-var about = document.querySelector('.about-selector');
+// ========== NAV LINKS AND MAIN CONTAINERS CLASSLIST TOOGLE
+const navLinks = document.querySelectorAll('.nav-links');
+const mainContainers = document.querySelectorAll('.main-container')
+const logo = document.querySelector('.logo');
+const logoColors = ["<img src='/img/basic/logo_150x150 niebieski.png' alt='' width='150px' height='150px' class='img'>","<img src='/img/basic/logo_150x150 zielony.png' alt='' width='150px' height='150px' class='img'>","<img src='/img/basic/logo_150x150 zolty.png' alt='' width='150px' height='150px' class='img'>","<img src='/img/basic/logo_150x150 bialy.png' alt='' width='150px' height='150px' class='img'>"]
+const foot = document.querySelector('.foot')
 
-var graphNar = document.querySelector('.graph-selector-narrow')
-var paintNar = document.querySelector('.painting-selector-narrow')
-var frontendNar = document.querySelector('.frontend-selector-narrow')
-var aboutNar = document.querySelector('.about-selector-narrow');
+navLinks.forEach(function(navLink){
 
+    navLink.addEventListener('click',function(e){
 
-var logo = document.querySelector('.logo');
-var foot = document.querySelector('.foot')
+        navLinks.forEach(function(navLink){
+            navLink.classList.remove('active')
+        })
+        e.currentTarget.classList.add('active')
+        mainContainers.forEach(function(e){
+        e.classList.add('invisible')
+        })
 
-var graphicDesing = document.querySelector('.graphic-design')
-var aboutMe = document.querySelector('.aboutme')
-var draw = document.querySelector('.drawing-painting')
-var front = document.querySelector('.frontend-development')
+        const category = e.currentTarget.dataset.id;
+        const currentContainer = document.getElementById(category);
+        currentContainer.classList.remove('invisible');
 
-var hamburger = document.querySelector('.hamburger');
-var hamList = document.querySelector('.ham-list');
+        if(category === 'graphic'){logo.innerHTML = logoColors[0]};
+        if(category === 'painting'){logo.innerHTML = logoColors[1]};
+        if(category === 'frontend'){logo.innerHTML = logoColors[2]};
+        if(category === 'about'){logo.innerHTML = logoColors[3]};
 
-function remove() {
-    graph.classList.add('active');
-    paint.classList.add('active');
-    frontend.classList.add('active');
-    about.classList.add('active');
-
-    paint.classList.remove('paint');
-    frontend.classList.remove('fronte');
-    about.classList.remove('about')
-    graph.classList.remove('graph');
-
-    foot.classList.remove('yellow')
-    foot.classList.remove('green')
-    foot.classList.remove('black')
-    foot.classList.remove('blue')
-
-    aboutMe.classList.add('visible')
-    draw.classList.add('visible')
-    front.classList.add('visible')
-    aboutMe.classList.add('visible')
-    graphicDesing.classList.add('visible')
-}
-
-
-
-graph.addEventListener('click', function(event){
-
-remove()
-
-    graph.classList.add('graph');
-    graph.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 niebieski.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('blue');
-
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550)
-    graphicDesing.classList.remove('visible')
+        foot.classList.add('slide');
+        setTimeout(function(){foot.classList.remove('slide')},550);
+        foot.classList.remove('graphic','painting','about','frontend');
+        foot.classList.add(category);
+        })
 })
-
-
-
-paint.addEventListener('click', function(event){
-
-    remove()
-
-    paint.classList.add('paint');
-    paint.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 zielony.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('green');
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550)
-    draw.classList.remove('visible')
-    })
-    
-
-
-
-frontend.addEventListener('click', function(event){
-
-    remove()
-
-    frontend.classList.add('fronte');
-    frontend.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 zolty.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('yellow');
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550)
-    front.classList.remove('visible')
-})
-
-
-
-about.addEventListener('click', function(event){
-
-    remove()
-
-    about.classList.add('about');
-    about.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 bialy.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('black');
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550) 
-    aboutMe.classList.remove('visible')
-})
-graphNar.addEventListener('click', function(event){
-
-remove()
-
-    graph.classList.add('graph');
-    graph.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 niebieski.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('blue');
-
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550)
-    graphicDesing.classList.remove('visible')
-})
-
-
-
-paintNar.addEventListener('click', function(event){
-
-    remove()
-
-    paint.classList.add('paint');
-    paint.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 zielony.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('green');
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550)
-    draw.classList.remove('visible')
-    })
-    
-
-
-
-frontendNar.addEventListener('click', function(event){
-
-    remove()
-
-    frontend.classList.add('fronte');
-    frontend.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 zolty.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('yellow');
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550)
-    front.classList.remove('visible')
-})
-
-
-
-aboutNar.addEventListener('click', function(event){
-
-    remove()
-
-    about.classList.add('about');
-    about.classList.remove('active');
-    logo.innerHTML = "<img src='/img/basic/logo_150x150 bialy.png' alt='' width='150px' height='150px' class='img'>"
-    foot.classList.add('slide');
-    foot.classList.add('black');
-    setTimeout(function(){
-        foot.classList.remove('slide')
-    },1550) 
-    aboutMe.classList.remove('visible')
-})
-
-
 
 logo.addEventListener('click', function(){
     console.log("That's my logo. Hope u like it");
 })
 
-hamburger.addEventListener('click', function(){
-    hamList.classList.toggle('visible-list')
+
+
+
+
+// paintNar.addEventListener('click', function(event){
+
+//     remove()
+
+//     paint.classList.add('paint');
+//     paint.classList.remove('active');
+//     logo.innerHTML = "<img src='/img/basic/logo_150x150 zielony.png' alt='' width='150px' height='150px' class='img'>"
+//     foot.classList.add('slide');
+//     foot.classList.add('green');
+//     setTimeout(function(){
+//         foot.classList.remove('slide')
+//     },1550)
+//     draw.classList.remove('visible')
+//     })
     
-})
+
+
+
+// frontendNar.addEventListener('click', function(event){
+
+//     remove()
+
+//     frontend.classList.add('fronte');
+//     frontend.classList.remove('active');
+//     logo.innerHTML = "<img src='/img/basic/logo_150x150 zolty.png' alt='' width='150px' height='150px' class='img'>"
+//     foot.classList.add('slide');
+//     foot.classList.add('yellow');
+//     setTimeout(function(){
+//         foot.classList.remove('slide')
+//     },1550)
+//     front.classList.remove('visible')
+// })
+
+
+
+// aboutNar.addEventListener('click', function(event){
+
+//     remove()
+
+//     about.classList.add('about');
+//     about.classList.remove('active');
+//     logo.innerHTML = "<img src='/img/basic/logo_150x150 bialy.png' alt='' width='150px' height='150px' class='img'>"
+//     foot.classList.add('slide');
+//     foot.classList.add('black');
+//     setTimeout(function(){
+//         foot.classList.remove('slide')
+//     },1550) 
+//     aboutMe.classList.remove('visible')
+// })
+
+
+
+// logo.addEventListener('click', function(){
+//     console.log("That's my logo. Hope u like it");
+// })
+
+// hamburger.addEventListener('click', function(){
+//     hamList.classList.toggle('visible-list')
+    
+// })
