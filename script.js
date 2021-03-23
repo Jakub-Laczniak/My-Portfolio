@@ -30,11 +30,42 @@ navLinks.forEach(function(navLink){
         setTimeout(function(){foot.classList.remove('slide')},550);
         foot.classList.remove('graphic','painting','about','frontend');
         foot.classList.add(category);
+
+        articles.forEach(function(e){
+            e.classList.add('visibility');
+        })
+        backBtn.classList.add('visibility');
         })
 })
 
 logo.addEventListener('click', function(){
     console.log("That's my logo. Hope u like it");
+})
+
+
+
+
+const backBtn = document.querySelector('.back-btn');
+const articles = document.querySelectorAll('.articles');
+const projectElements = document.querySelectorAll('.project-element');
+
+projectElements.forEach(function(element){
+    element.addEventListener('click',function(e){
+        const category = e.currentTarget.dataset.id;
+        const subArticle = document.getElementById(category)
+        subArticle.classList.remove('visibility')
+        window.scrollTo(0, 0);
+        backBtn.classList.remove('visibility')
+    })
+})
+
+
+backBtn.addEventListener('click',function(){
+    window.scrollTo(0, 0);
+    articles.forEach(function(e){
+        e.classList.add('visibility');
+    })
+    backBtn.classList.add('visibility');
 })
 
 

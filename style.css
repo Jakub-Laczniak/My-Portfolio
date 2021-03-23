@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: montserrat;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -153,7 +154,7 @@ span {font-weight: bold;}
     bottom: 0;
     height: 5rem;
     max-height: .7rem;
-    z-index: 1;
+    z-index: 5;
 }
 
 .foot.graphic {background-color: rgb(57, 56, 149);}
@@ -176,14 +177,101 @@ span {font-weight: bold;}
     }
 }
 
+/* ========== MORE =============== */
 
+.articles {
+    -webkit-box-shadow: 14px 0px 19px -8px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 14px 0px 19px -8px rgba(50, 50, 50, 0.75);
+    box-shadow: 14px 0px 19px -8px rgba(50, 50, 50, 0.75);
+
+    background: white;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+    top: 40rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+}
+
+.back-btn {
+  width: 8rem;
+  height: 8rem;
+  background-size: cover;
+  position: fixed;
+  top: 90%;
+  right: 20%;
+  z-index: 6;
+  cursor: pointer;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+  color: rgba(50, 50, 50, 0.75);
+}
+
+@keyframes bounce-2 {
+    0%   { transform: scale(0.9); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(0.9); }
+}
+
+.visibility {
+    visibility: hidden;
+    height: 0;
+}
+
+
+.content {
+    width: 90rem;
+    margin: auto;
+    padding-bottom: 5rem;
+}
+
+.content-element {
+    padding-top: 5rem;
+}
+
+.content-text {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 3rem 0rem;
+    text-align: center;
+}
+
+span {
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.content-img{
+    margin: auto;
+    text-align: center;
+    width: 80rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin-top: 5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: bold;
+  }
 
 
 
 /*============ RESPONSIVE ========*/
 
 
-@media (min-width:1130px){
+/* @media (min-width:1130px){
     .narrow-screen, .hamburger, .ham-list, .small-logo{
         display: none;
     }
@@ -347,4 +435,4 @@ span {font-weight: bold;}
     margin-bottom: 1rem;
 }
 
-}
+} */
