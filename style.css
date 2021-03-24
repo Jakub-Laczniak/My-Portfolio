@@ -132,12 +132,23 @@ header {
 .PT {border-bottom: 1rem rgb(0, 135, 93) solid;}
 .FE {border-bottom: 1rem rgb(226, 220, 102) solid;}
 
+.about-me-container {
+    width: 105rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 .text-aboutme {
     font-size: 2rem;
-    width: 50rem;
     padding-right: 5rem;
     line-height: 1.5;
-    float: left;
+    text-align: justify;
+}
+
+.about-me-img {
+    width: 50rem;
+    height: 50rem;
 }
 
 span {font-weight: bold;}
@@ -197,10 +208,10 @@ span {font-weight: bold;}
 
 .back-btn {
   width: 8rem;
-  height: 8rem;
+  height: 3.5rem;
   background-size: cover;
-  position: fixed;
-  top: 90%;
+  position: absolute;
+  top: 450px;
   right: 20%;
   z-index: 6;
   cursor: pointer;
@@ -209,12 +220,31 @@ span {font-weight: bold;}
   animation-name: bounce-2;
   animation-timing-function: ease;
   color: rgba(50, 50, 50, 0.75);
+  border-radius: 2rem;
 }
 
+.fixed {
+    position: fixed;
+    top: 100px;
+    background-color: rgba(50, 50, 50, 0.2);
+}
+
+.back-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+}
+
+
+
 @keyframes bounce-2 {
-    0%   { transform: scale(0.9); }
-    50%  { transform: scale(1.2); }
-    100% { transform: scale(0.9); }
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.4); }
+    100% { transform: scale(1); }
 }
 
 .visibility {
@@ -266,20 +296,106 @@ a {
     font-weight: bold;
   }
 
+  .visibility-text {
+      margin: auto;
+      width: 100%;
+      font-size: 2rem;
+      text-transform: none;
+      font-weight: 300;
+      position: absolute;
+      top: 100px;
+      visibility: hidden;
+  }
+
 
 
 /*============ RESPONSIVE ========*/
 
+@media(max-width:1900px){
+    .back-btn{
+        right: 15%;
+    }
+}
+@media(max-width:1550px){
+    .back-btn{
+        right: 10%;
+    }
+}
+@media(max-width:1550px){
+    .back-btn{
+        right: 2%;
+    }
+}
 
-/* @media (min-width:1130px){
+
+@media (min-width:1130px){
     .narrow-screen, .hamburger, .ham-list, .small-logo{
         display: none;
     }
 }
 
+
 @media (max-width: 1130px) {
 
-    .wide-screen {
+    .about-me-container {
+        width:90%;
+        display: grid;
+        grid-template-columns: 100%;
+        margin-top: 60px;
+    }
+    
+    .text-aboutme {
+        text-align: center;
+    }
+    
+    .about-me-img {
+        width: 60%;
+        margin: auto;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .text-aboutme{
+        display: block;
+        float: none;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .back-btn{
+        right: 10%;
+        top: 250px;
+        background-color: rgba(50, 50, 50, 0.2);
+        transition: .5s;
+    }
+
+    .move-back-btn{
+        top:420px;
+    }
+
+    .articles {
+        top: 20rem;
+    }
+
+    .move-article {
+        top: 370px;
+        transition: .5s ease;
+    }
+    .content {
+        width: 80%;
+    }
+
+    .content-img {
+        width: 80%;
+    }
+
+    .fixed {
+        position: absolute;
+    }
+
+    .logo {
         display: none;
     }
 
@@ -317,8 +433,9 @@ a {
         -webkit-transition: .5s;
     }
 
-    .ham-list {
+    .wide-screen-list {
         height: 0;
+        display: block;
         margin: auto;
         margin-top: 4rem;
         width: 80%;
@@ -326,113 +443,104 @@ a {
         line-height: 2;
         cursor: pointer;
         overflow: hidden;
-        transition: .6s ease;
+        transition: .5s ease;
     }
 
     .visible-list {
-        height: 16rem;
+        height: 15rem;
     }
 
-    .active-narrow:hover{
+    .active {
         font-weight: bold;
-        margin-right: 2rem;
+        border-bottom: 0px;
     }
-
-
-    
-    .project-face {
-        width: 40rem;
-        height: 40rem;
-    }
-
-    .aboutme {
-        margin: auto;
-        width: 80%;
-        margin-bottom: 7rem;
-        text-align: center;
+    .project-container {
+        width:90%;
+        display: grid;
+        grid-template-columns: 47.5% 47.5%;
     }
     
-    .myphoto {
-        margin: auto;
-        margin-top: 3rem;
-        float: none;
-        width: 100%;
-        max-width: 50rem;
+    .project-element {
+        height: auto;
+    }
+
+    .active.graph{
+        font-weight: bold;
+        margin-bottom: -5px;
+        border-bottom: 0px;
     }
     
-    .text-aboutme {
-        width: 100%;
-        float: none;
-        margin: auto;
-        text-align: center;
-        margin-top: 4rem;
-        padding: 0;
-    }
-
-    .GR {
-        border-bottom: 0rem rgb(57, 56, 149) solid;
+    .active.paint{
+        font-weight: bold;
+        margin-bottom: -5px;
+        border-bottom: 0px;
     }
     
-    .PT {
-        border-bottom: 0rem rgb(0, 135, 93) solid;
+    .active.frontend{
+        font-weight: bold;
+        margin-bottom: -5px;
+        border-bottom: 0px;
     }
     
-    .FE {
-        border-bottom: 0rem rgb(226, 220, 102) solid;
-    }
-    .project-BG 
-    {
-        height: 100%;
-    }
-
-    .project-text {
-        font-size: 4rem;
-    }
-
-}
-
-@media (max-width:1050px){
-    .project-face {
-        width: 37rem;
-        height: 37rem;
-    }
-}
-@media (max-width:970px){
-    .project-face {
-        width: 34rem;
-        height: 34rem;
-    }
-}
-@media (max-width:890px){
-    .project-face {
-        width: 31rem;
-        height: 31rem;
+    .active.about{
+        font-weight: bold;
+        margin-bottom: -5px;
+        border-bottom: 0px;
     }
 }
 
 @media (max-width: 800px) {
-.narrow-screen-nav{width: 90%;}
-.ham-list {width: 90%;}
-.project-face {width: 100%;}
-.aboutme {width: 90%;}
 
-.project-container {
-    justify-content: space-around;
+header {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
 }
 
-.project-face {
-    width: 40rem;
-    height: 40rem;
+.nav-shadow{
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.ham-list {
+    visibility: hidden;
+        height: 0;
+    overflow: hidden;
+}
+main {
+    visibility: hidden;
+        height: 0;
+    overflow: hidden;
 }
 
-.narrow-screen-nav {
-    height: 10rem;
-    margin-top: 2rem;
+.back-btn {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: .2s;
 }
 
-.nav-shadow {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+article {
+    visibility: hidden;
+        height: 0;
+    overflow: hidden;
 }
 
-} */
+section {
+    visibility: hidden;
+        height: 0;
+    overflow: hidden;
+}
+
+.hamburger {
+    visibility: hidden;
+        height: 0;
+    overflow: hidden;
+}
+
+.visibility-text {
+    visibility: visible
+};
+
+}

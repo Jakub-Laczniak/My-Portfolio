@@ -1,4 +1,5 @@
 // ========== NAV LINKS AND MAIN CONTAINERS CLASSLIST TOOGLE
+
 const navLinks = document.querySelectorAll('.nav-links');
 const mainContainers = document.querySelectorAll('.main-container')
 const logo = document.querySelector('.logo');
@@ -13,6 +14,7 @@ navLinks.forEach(function(navLink){
             navLink.classList.remove('active')
         })
         e.currentTarget.classList.add('active')
+
         mainContainers.forEach(function(e){
         e.classList.add('invisible')
         })
@@ -44,6 +46,7 @@ logo.addEventListener('click', function(){
 
 
 
+// ========== ARTICLES CURTAIN TOGGLE AND BACK BTN FUNCIONALITY
 
 const backBtn = document.querySelector('.back-btn');
 const articles = document.querySelectorAll('.articles');
@@ -69,66 +72,26 @@ backBtn.addEventListener('click',function(){
 })
 
 
+window.addEventListener("scroll", function () {
+  const scrollHeight = window.pageYOffset;
 
+  if (scrollHeight>400){
+      backBtn.classList.add('fixed');
+  } else {
+      backBtn.classList.remove('fixed');
+  }
+});
 
+    const hamburger = document.querySelector('.hamburger')
+    const hamList = document.querySelector('.wide-screen-list')
 
-// paintNar.addEventListener('click', function(event){
+    hamburger.addEventListener('click', function(){
+    hamList.classList.toggle('visible-list');
+    articles.forEach(function(e){
+        e.classList.toggle('move-article');
+    })
+    backBtn.classList.toggle('move-back-btn')
+ })
 
-//     remove()
-
-//     paint.classList.add('paint');
-//     paint.classList.remove('active');
-//     logo.innerHTML = "<img src='/img/basic/logo_150x150 zielony.png' alt='' width='150px' height='150px' class='img'>"
-//     foot.classList.add('slide');
-//     foot.classList.add('green');
-//     setTimeout(function(){
-//         foot.classList.remove('slide')
-//     },1550)
-//     draw.classList.remove('visible')
-//     })
-    
-
-
-
-// frontendNar.addEventListener('click', function(event){
-
-//     remove()
-
-//     frontend.classList.add('fronte');
-//     frontend.classList.remove('active');
-//     logo.innerHTML = "<img src='/img/basic/logo_150x150 zolty.png' alt='' width='150px' height='150px' class='img'>"
-//     foot.classList.add('slide');
-//     foot.classList.add('yellow');
-//     setTimeout(function(){
-//         foot.classList.remove('slide')
-//     },1550)
-//     front.classList.remove('visible')
-// })
-
-
-
-// aboutNar.addEventListener('click', function(event){
-
-//     remove()
-
-//     about.classList.add('about');
-//     about.classList.remove('active');
-//     logo.innerHTML = "<img src='/img/basic/logo_150x150 bialy.png' alt='' width='150px' height='150px' class='img'>"
-//     foot.classList.add('slide');
-//     foot.classList.add('black');
-//     setTimeout(function(){
-//         foot.classList.remove('slide')
-//     },1550) 
-//     aboutMe.classList.remove('visible')
-// })
-
-
-
-// logo.addEventListener('click', function(){
-//     console.log("That's my logo. Hope u like it");
-// })
-
-// hamburger.addEventListener('click', function(){
-//     hamList.classList.toggle('visible-list')
-    
-// })
+ const wideList = document.querySelector('.wide-screen-list');
+ const narrowList = document.querySelector('.ham-list');
