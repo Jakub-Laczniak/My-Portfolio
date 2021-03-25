@@ -92,6 +92,3 @@ window.addEventListener("scroll", function () {
     })
     backBtn.classList.toggle('move-back-btn')
  })
-
- const wideList = document.querySelector('.wide-screen-list');
- const narrowList = document.querySelector('.ham-list');

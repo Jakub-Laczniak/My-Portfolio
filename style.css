@@ -307,21 +307,25 @@ a {
       visibility: hidden;
   }
 
+  .nav-shadow{
+      visibility: hidden;
+  }
+
 
 
 /*============ RESPONSIVE ========*/
 
-@media(max-width:1900px){
+@media (max-width:1900px){
     .back-btn{
         right: 15%;
     }
 }
-@media(max-width:1550px){
+@media (max-width:1550px){
     .back-btn{
         right: 10%;
     }
 }
-@media(max-width:1550px){
+@media (max-width:1550px){
     .back-btn{
         right: 2%;
     }
@@ -416,6 +420,7 @@ a {
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         width: 100%;
+        visibility: visible;
     }
 
     .hamburger {
