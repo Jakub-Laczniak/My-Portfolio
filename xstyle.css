@@ -424,8 +424,8 @@ a {
     }
 
     .hamburger {
-        height: 5em;
-        width: 5em;
+        height: 3rem;
+        width: 3rem;
         background-image: url(/img/basic/ham_1.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -548,4 +548,17 @@ section {
     visibility: visible
 };
 
+}
+
+.g ::selection {
+    color: white;
+    background-color: rgb(57, 56, 149);
+}
+.p ::selection {
+    color: white;
+    background-color: rgb(0, 135, 93);
+}
+.f ::selection {
+    color: black;
+    background-color: rgb(226, 220, 102);
 }
