@@ -103,6 +103,7 @@ header {
     font-size: 5rem;
     font-weight: 400;
     position: absolute;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -493,7 +494,7 @@ a {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 319px) {
 
 header {
     visibility: hidden;
